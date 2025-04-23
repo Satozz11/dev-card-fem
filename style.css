@@ -8,7 +8,8 @@
 }
 
 img{
-    max-width: 90%;
+    max-width: 20%;
+    margin-top: 1rem;
     display: block;
 }
 
@@ -25,12 +26,151 @@ body{
 /* LAYOUT STYLING */
 
 .grid-container{
-    width: 70%;
+    margin-top: 2rem;
+    width: 40%;
     display: grid;
-    grid-template-rows: repeat(3, 13rem);
-    background-color: hsl(0, 0%, 20%);
+    grid-template-columns: 2fr;
+    grid-template-rows: 10rem 8rem 20rem;
+    background-color: hsl(0, 0%, 12%);
+    margin-inline: auto;
+    place-items: center;
+    grid-template-areas: 'row1'
+                         'row2'
+                         'row3'
+                         'row3';
+    border-radius: 1rem;
 }
 
 .grid-items{
     width: 80%;
+    height: 100%;
+    /* border: 2px solid orange; */
 }
+
+.row-one {
+    display: grid;
+    place-items:center;
+    grid-area: row1;
+    /* height: 30%; */
+}
+
+.row-two{
+    display: grid;
+    grid-template-rows: repeat(3, .1rem);
+    justify-content: center;
+    align-content: flex-start;
+    gap: 3rem;
+    text-align: center;
+    grid-area: row2;
+    
+}
+
+.row-three{
+    display: grid;
+    grid-template-rows: repeat(5, 1rem);
+    gap: 2.5rem;
+    grid-area: row3;
+
+    justify-content: center;
+}
+
+/* STYLING IMAGE */
+.row-one img{
+    border-radius: 100%;
+}
+
+/* STYLING FONTS */
+.row-two h3{
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    
+}
+
+.row-two h5{
+    color: hsl(75, 94%, 57%);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.row-two p{
+    color: white;
+    font-size: 1.1rem;
+    font-weight: lighter;
+    margin-bottom: 1.5rem;
+    font-stretch: wider;
+}
+
+/* STYLING BUTTON */
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.4rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    background-color: hsl(0, 0%, 20%);
+    border-radius: .6rem;
+    color: white;
+    font-weight: bolder;
+    border: none;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 95%;
+    transition: .1s ease-in-out;
+}
+
+button:active{
+    cursor: pointer;
+    background-color: hsl(75, 94%, 57%);
+    color: black;
+    
+}
+
+
+/* MEDIA QUERY FOR RESPONSIVENESS */
+@media screen and (max-width: 1040px) {
+    
+    
+    button{
+        max-width: 3rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .row-two{
+        margin-bottom: 4rem;
+    }
+    
+    button{
+        max-width: 2rem;
+    }
+}
+
+@media screen and (min-width:300px) and (max-width: 900px) {
+    .grid-container{
+        width: 80%;
+    }
+    .row-two{
+        margin-bottom: 4rem;
+    }
+    
+   .row-three{
+    width: 50%;
+   }
+
+   .row-three > * {
+    width: 40%;
+}
+
+}
+
+@media screen and (max-width:400px) {
+    .row-three{
+        width: 90%;
+    }
+   
+    
+
+    }
